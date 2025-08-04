@@ -4,7 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import { getPlaceholderImage } from '@/lib/utils/placeholders';
+
 import Link from 'next/link';
 
 export default function WorkPage() {
@@ -201,7 +201,7 @@ export default function WorkPage() {
             <Card className="p-6 hover shadow-lg">
               <div className="h-48 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg mb-4"></div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Women's Empowerment in Karachi
+                Women&apos;s Empowerment in Karachi
               </h3>
               <p className="text-gray-600 mb-4">
                 Successfully trained 200 women in fish processing and marketing, increasing their household income by 40%.

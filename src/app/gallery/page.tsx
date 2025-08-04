@@ -4,7 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 import { ImageVideoModal } from '@/components/ui/ImageVideoModal';
-import { placeholderImages, placeholderVideos, getPlaceholderImage, getPlaceholderVideo } from '@/lib/utils/placeholders';
+import { placeholderImages, getPlaceholderImage, getPlaceholderVideo } from '@/lib/utils/placeholders';
 import { useState } from 'react';
 
 export default function GalleryPage() {
@@ -81,7 +81,7 @@ export default function GalleryPage() {
     {
       id: 2,
       title: 'Community Success Stories',
-      description: 'Hear from community members about PFF\'s impact',
+      description: 'Hear from community members about PFF&apos;s impact',
       thumbnail: placeholderImages.video2,
       videoUrl: getPlaceholderVideo('community'),
       duration: '8:45',
@@ -333,7 +333,7 @@ export default function GalleryPage() {
                       </div>
                       <div className="lg:w-2/3">
                         <blockquote className="text-lg text-gray-700 italic mb-4 border-l-4 border-blue-600 pl-4">
-                          "{testimonial.quote}"
+                          &ldquo;{testimonial.quote}&rdquo;
                         </blockquote>
                         <div className="bg-gray-50 p-4 rounded-lg">
                           <h4 className="font-semibold text-gray-900 mb-2">Their Story:</h4>
@@ -356,7 +356,7 @@ export default function GalleryPage() {
             Share Your Story
           </h2>
           <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            Are you a member of the fisherfolk community with a story to share? We'd love to hear from you and feature your experiences in our gallery.
+            Are you a member of the fisherfolk community with a story to share? We&apos;d love to hear from you and feature your experiences in our gallery.
           </p>
                      <div className="flex flex-col sm:flex-row gap-4 justify-center">
              <button 

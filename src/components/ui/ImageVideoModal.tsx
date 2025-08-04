@@ -42,7 +42,7 @@ export function ImageVideoModal({ isOpen, onClose, type, src, title, description
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [handleKeyDown]);
 
   if (!isOpen) return null;
 

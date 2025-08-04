@@ -119,10 +119,10 @@ export default function AboutPage() {
                   Founded in 1998, the Pakistan Fisherfolk Forum (PFF) emerged from the grassroots movement of fisherfolk communities who were facing increasing challenges to their livelihoods and traditional way of life.
                 </p>
                 <p>
-                  What started as a small group of concerned fishermen has grown into one of Pakistan's most influential organizations advocating for the rights of fisherfolk and coastal communities.
+                  What started as a small group of concerned fishermen has grown into one of Pakistan&apos;s most influential organizations advocating for the rights of fisherfolk and coastal communities.
                 </p>
                 <p>
-                  Over the past 25+ years, PFF has expanded its reach to over 50 villages across Pakistan's coastal regions, working tirelessly to ensure that the voices of fisherfolk are heard in policy-making processes.
+                  Over the past 25+ years, PFF has expanded its reach to over 50 villages across Pakistan&apos;s coastal regions, working tirelessly to ensure that the voices of fisherfolk are heard in policy-making processes.
                 </p>
                 <p>
                   Our organization has been at the forefront of numerous successful campaigns, from securing fishing rights to advocating for environmental protection and climate change adaptation.

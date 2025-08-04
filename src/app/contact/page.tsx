@@ -45,7 +45,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto">
-            Get in touch with us. We'd love to hear from you.
+            Get in touch with us. We&apos;d love to hear from you.
           </p>
         </div>
       </section>
