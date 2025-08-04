@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -32,9 +33,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Organization Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">PFF</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center justify-center">
+                <Image 
+                  src="/fisherfolk-logo.png" 
+                  alt="Pakistan Fisherfolk Forum Logo" 
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold">Pakistan Fisherfolk Forum</h3>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 
 export function Header() {
@@ -35,9 +36,16 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">PFF</span>
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="flex items-center justify-center">
+              <Image 
+                src="/fisherfolk-logo.png" 
+                alt="Pakistan Fisherfolk Forum Logo" 
+                width={48}
+                height={48}
+                className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-gray-900">Pakistan Fisherfolk Forum</h1>
@@ -78,7 +86,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-200">
+          <div className="lg:hidden bg-white border-t border-gray-200 rounded-lg">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <Link

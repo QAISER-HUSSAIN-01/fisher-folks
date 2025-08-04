@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { placeholderImages } from '@/lib/utils/placeholders';
 
 export default function AboutPage() {
   const values = [
@@ -50,19 +51,19 @@ export default function AboutPage() {
       name: 'Muhammad Ali Shah',
       position: 'Chairperson',
       description: 'Leading PFF with over 20 years of experience in fisherfolk rights advocacy.',
-      image: '/api/placeholder/200/200',
+      image: placeholderImages.profile1,
     },
     {
       name: 'Fatima Hassan',
       position: 'Executive Director',
       description: 'Overseeing day-to-day operations and strategic planning for community development.',
-      image: '/api/placeholder/200/200',
+      image: placeholderImages.profile2,
     },
     {
       name: 'Ahmed Khan',
       position: 'Program Manager',
       description: 'Managing field operations and coordinating with fisherfolk communities across Pakistan.',
-      image: '/api/placeholder/200/200',
+      image: placeholderImages.profile3,
     },
   ];
 
@@ -70,22 +71,22 @@ export default function AboutPage() {
     {
       name: 'World Wildlife Fund (WWF)',
       description: 'Collaborating on marine conservation and sustainable fishing practices.',
-      logo: '/api/placeholder/150/80',
+      logo: placeholderImages.small,
     },
     {
       name: 'Oxfam Pakistan',
       description: 'Working together on poverty alleviation and community development programs.',
-      logo: '/api/placeholder/150/80',
+      logo: placeholderImages.small,
     },
     {
       name: 'Pakistan Fisherfolk Coalition',
       description: 'National network of fisherfolk organizations advocating for collective rights.',
-      logo: '/api/placeholder/150/80',
+      logo: placeholderImages.small,
     },
     {
       name: 'International Union for Conservation of Nature (IUCN)',
       description: 'Partnering on environmental protection and climate change adaptation.',
-      logo: '/api/placeholder/150/80',
+      logo: placeholderImages.small,
     },
   ];
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 interface Toast {
@@ -60,6 +60,12 @@ interface ToasterContainerProps {
 }
 
 function ToasterContainer({ toasts, removeToast }: ToasterContainerProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const getToastStyles = (type: Toast['type']) => {
     const baseStyles = 'flex items-start p-4 rounded-lg shadow-lg max-w-sm w-full transform transition-all duration-300 ease-out';
     
@@ -100,7 +106,7 @@ function ToasterContainer({ toasts, removeToast }: ToasterContainerProps) {
       case 'info':
         return (
           <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zm-9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
           </svg>
         );
     }
@@ -138,6 +144,11 @@ function ToasterContainer({ toasts, removeToast }: ToasterContainerProps) {
       ))}
     </div>
   );
+
+  // Only render the portal when the component is mounted on the client side
+  if (!isMounted || typeof document === 'undefined') {
+    return null;
+  }
 
   return createPortal(toastContent, document.body);
 } 

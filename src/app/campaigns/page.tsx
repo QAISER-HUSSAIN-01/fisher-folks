@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import Link from 'next/link';
 
 export default function CampaignsPage() {
   const currentCampaigns = [
@@ -182,7 +183,9 @@ export default function CampaignsPage() {
               <p className="text-gray-600 text-sm mb-4">
                 Join our online petitions to support fisherfolk rights.
               </p>
-              <Button size="sm" className="w-full">Get Started</Button>
+              <Link href="/contact?inquiry=petition">
+                <Button size="sm" className="w-full">Get Started</Button>
+              </Link>
             </Card>
 
             <Card className="p-6 text-center hover shadow-lg">
@@ -195,7 +198,9 @@ export default function CampaignsPage() {
               <p className="text-gray-600 text-sm mb-4">
                 Participate in our awareness events and workshops.
               </p>
-              <Button size="sm" className="w-full">Get Started</Button>
+              <Link href="/get-involved">
+                <Button size="sm" className="w-full">Get Started</Button>
+              </Link>
             </Card>
 
             <Card className="p-6 text-center hover shadow-lg">
@@ -208,7 +213,9 @@ export default function CampaignsPage() {
               <p className="text-gray-600 text-sm mb-4">
                 Contribute your time and skills to support our campaigns.
               </p>
-              <Button size="sm" className="w-full">Get Started</Button>
+              <Link href="/get-involved">
+                <Button size="sm" className="w-full">Get Started</Button>
+              </Link>
             </Card>
 
             <Card className="p-6 text-center hover shadow-lg">
@@ -221,7 +228,9 @@ export default function CampaignsPage() {
               <p className="text-gray-600 text-sm mb-4">
                 Financial support helps us continue our advocacy work.
               </p>
-              <Button size="sm" className="w-full">Get Started</Button>
+              <Link href="/contact?inquiry=donation">
+                <Button size="sm" className="w-full">Get Started</Button>
+              </Link>
             </Card>
           </div>
         </div>
@@ -237,12 +246,16 @@ export default function CampaignsPage() {
             Together, we can create lasting positive change for fisherfolk communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="px-8 py-3 bg-white text-blue-600 hover:bg-gray-100">
-              Sign Up for Updates
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 border-white text-white hover:bg-white hover:text-blue-600">
-              Contact Us
-            </Button>
+            <Link href="/contact?inquiry=newsletter">
+              <Button size="lg" className="px-8 py-3 bg-white text-blue-600 hover:bg-gray-100">
+                Sign Up for Updates
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button variant="outline" size="lg" className="px-8 py-3 border-white text-white hover:bg-white hover:text-blue-600">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

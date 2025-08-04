@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { getPlaceholderImage } from '@/lib/utils/placeholders';
 import Link from 'next/link';
 
 export default function HomePage() {
@@ -11,19 +12,19 @@ export default function HomePage() {
     {
       title: 'Community Development Training',
       description: 'Providing capacity building and skill development programs for fisherfolk communities.',
-      image: '/api/placeholder/300/200',
+      image: getPlaceholderImage('training'),
       category: 'Community Development',
     },
     {
       title: 'Climate Change Advocacy',
       description: 'Working towards environmental justice and coastal protection initiatives.',
-      image: '/api/placeholder/300/200',
+      image: getPlaceholderImage('climate'),
       category: 'Environmental Justice',
     },
     {
       title: 'Legal Rights Support',
       description: 'Offering legal assistance and advocacy for fisherfolk rights and livelihoods.',
-      image: '/api/placeholder/300/200',
+      image: getPlaceholderImage('advocacy'),
       category: 'Rights Advocacy',
     },
   ];
@@ -42,8 +43,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image/Video Placeholder */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-cyan-800/80">
-          <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600">
+          <div className="absolute inset-0 bg-black/20"></div>
         </div>
         
         {/* Hero Content */}
@@ -51,8 +52,10 @@ export default function HomePage() {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Empowering <span className="text-blue-300">Fisherfolk</span> Communities
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
-            Advocating for social, economic, cultural, and political rights of fisherfolk and peasants in Pakistan
+          
+          {/* Subtitle */}
+          <p className="text-xl md:text-2xl lg:text-3xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200">
+            Advocating for <span className="text-cyan-300 font-semibold">social, economic, cultural, and political rights</span> of fisherfolk and peasants across Pakistan
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 py-3">
@@ -66,9 +69,20 @@ export default function HomePage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+          <div className="flex flex-col items-center text-white/70 hover:text-white transition-colors duration-300">
+            <span className="text-sm font-medium mb-2">Scroll to explore</span>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 right-10 hidden lg:block">
+          <div className="w-32 h-32 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+        </div>
+        <div className="absolute bottom-20 left-10 hidden lg:block">
+          <div className="w-24 h-24 bg-gradient-to-tr from-blue-400/20 to-cyan-500/20 rounded-full blur-xl animate-pulse animation-delay-1000"></div>
         </div>
       </section>
 
@@ -165,9 +179,11 @@ export default function HomePage() {
                   <p className="text-gray-600 mb-4">
                     {project.description}
                   </p>
-                  <Button variant="outline" size="sm">
-                    Learn More
-                  </Button>
+                  <Link href="/work">
+                    <Button variant="outline" size="sm">
+                      Learn More
+                    </Button>
+                  </Link>
                 </div>
               </Card>
             ))}
@@ -193,12 +209,16 @@ export default function HomePage() {
             Your support helps us continue our work in advocating for fisherfolk rights and building stronger communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="px-8 py-3">
-              Donate Now
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 border-white text-white hover:bg-white hover:text-gray-900">
-              Volunteer
-            </Button>
+            <Link href="/contact?inquiry=donation">
+              <Button size="lg" className="px-8 py-3">
+                Donate Now
+              </Button>
+            </Link>
+            <Link href="/get-involved">
+              <Button variant="outline" size="lg" className="px-8 py-3 border-white text-white hover:bg-white hover:text-gray-900">
+                Volunteer
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

@@ -4,6 +4,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { getPlaceholderImage } from '@/lib/utils/placeholders';
+import Link from 'next/link';
 
 export default function NewsPage() {
   const blogArticles = [
@@ -14,7 +16,7 @@ export default function NewsPage() {
       date: 'March 15, 2024',
       readTime: '5 min read',
       category: 'Community Development',
-      image: '/api/placeholder/400/250',
+      image: getPlaceholderImage('women'),
     },
     {
       title: 'Climate Change Impact on Fisherfolk',
@@ -23,7 +25,7 @@ export default function NewsPage() {
       date: 'March 10, 2024',
       readTime: '7 min read',
       category: 'Environmental Justice',
-      image: '/api/placeholder/400/250',
+      image: getPlaceholderImage('climate'),
     },
     {
       title: 'Legal Victory for Fishing Rights',
@@ -32,7 +34,7 @@ export default function NewsPage() {
       date: 'March 5, 2024',
       readTime: '4 min read',
       category: 'Rights Advocacy',
-      image: '/api/placeholder/400/250',
+      image: getPlaceholderImage('advocacy'),
     },
   ];
 
@@ -132,9 +134,11 @@ export default function NewsPage() {
                   </p>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-500">By {article.author}</span>
-                    <Button variant="outline" size="sm">
-                      Read More
-                    </Button>
+                    <Link href="/contact?inquiry=blog">
+                      <Button variant="outline" size="sm">
+                        Read More
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </Card>
@@ -142,9 +146,11 @@ export default function NewsPage() {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" className="px-8">
-              View All Articles
-            </Button>
+            <Link href="/contact?inquiry=blog">
+              <Button size="lg" className="px-8">
+                View All Articles
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -177,9 +183,11 @@ export default function NewsPage() {
                 </p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-500">{release.date}</span>
-                  <Button variant="outline" size="sm">
-                    Read Full Release
-                  </Button>
+                  <Link href="/contact?inquiry=press-release">
+                    <Button variant="outline" size="sm">
+                      Read Full Release
+                    </Button>
+                  </Link>
                 </div>
               </Card>
             ))}
@@ -215,9 +223,11 @@ export default function NewsPage() {
                 </p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-500">{publication.date}</span>
-                  <Button size="sm">
-                    Download PDF
-                  </Button>
+                  <Link href="/contact?inquiry=publication">
+                    <Button size="sm">
+                      Download PDF
+                    </Button>
+                  </Link>
                 </div>
               </Card>
             ))}
@@ -241,9 +251,11 @@ export default function NewsPage() {
                 placeholder="Enter your email address"
                 className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
               />
-              <Button size="lg" className="px-8 py-3 bg-white text-blue-600 hover:bg-gray-100">
-                Subscribe
-              </Button>
+              <Link href="/contact?inquiry=newsletter">
+                <Button size="lg" className="px-8 py-3 bg-white text-blue-600 hover:bg-gray-100">
+                  Subscribe
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

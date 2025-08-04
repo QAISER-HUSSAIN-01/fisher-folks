@@ -4,6 +4,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { getPlaceholderImage } from '@/lib/utils/placeholders';
+import Link from 'next/link';
 
 export default function WorkPage() {
   const workAreas = [
@@ -204,9 +206,11 @@ export default function WorkPage() {
               <p className="text-gray-600 mb-4">
                 Successfully trained 200 women in fish processing and marketing, increasing their household income by 40%.
               </p>
-              <Button variant="outline" size="sm">
-                Read More
-              </Button>
+              <Link href="/gallery">
+                <Button variant="outline" size="sm">
+                  Read More
+                </Button>
+              </Link>
             </Card>
 
             <Card className="p-6 hover shadow-lg">
@@ -217,9 +221,11 @@ export default function WorkPage() {
               <p className="text-gray-600 mb-4">
                 Secured fishing rights for 15 coastal communities, protecting their traditional livelihoods from corporate encroachment.
               </p>
-              <Button variant="outline" size="sm">
-                Read More
-              </Button>
+              <Link href="/gallery">
+                <Button variant="outline" size="sm">
+                  Read More
+                </Button>
+              </Link>
             </Card>
 
             <Card className="p-6 hover shadow-lg">
@@ -230,9 +236,11 @@ export default function WorkPage() {
               <p className="text-gray-600 mb-4">
                 Implemented sustainable fishing practices in 30 villages, reducing environmental impact while maintaining productivity.
               </p>
-              <Button variant="outline" size="sm">
-                Read More
-              </Button>
+              <Link href="/gallery">
+                <Button variant="outline" size="sm">
+                  Read More
+                </Button>
+              </Link>
             </Card>
           </div>
         </div>
@@ -248,12 +256,16 @@ export default function WorkPage() {
             Your support helps us continue our vital work in empowering fisherfolk communities across Pakistan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="px-8 py-3 bg-white text-blue-600 hover:bg-gray-100">
-              Donate Now
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 border-white text-white hover:bg-white hover:text-blue-600">
-              Volunteer
-            </Button>
+            <Link href="/contact?inquiry=donation">
+              <Button size="lg" className="px-8 py-3 bg-white text-blue-600 hover:bg-gray-100">
+                Donate Now
+              </Button>
+            </Link>
+            <Link href="/get-involved">
+              <Button variant="outline" size="lg" className="px-8 py-3 border-white text-white hover:bg-white hover:text-blue-600">
+                Volunteer
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
